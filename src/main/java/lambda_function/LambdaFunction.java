@@ -62,7 +62,7 @@ public class LambdaFunction {
         Map<Currency, List<Transaction>> transactionByCurrencies = transactionList.stream()
                 .filter(transaction -> transaction.getAmount() < 1000)
                 .collect(groupingBy(Transaction::getCurrency));
-        System.out.println("LambdaFunction.testStreamAPI::"+transactionByCurrencies.keySet()+"="+transactionByCurrencies.values());
+        System.out.println("lambda_function.LambdaList.testStreamAPI::"+transactionByCurrencies.keySet()+"="+transactionByCurrencies.values());
 
     }
 
@@ -71,7 +71,7 @@ public class LambdaFunction {
         Map<Currency, List<Transaction>> transactionByCurrencies = transactionList.parallelStream()
                 .filter(transaction -> transaction.getAmount() < 1000)
                 .collect(groupingBy(Transaction::getCurrency));
-        System.out.println("LambdaFunction.testParallelStreamAPI::"+transactionByCurrencies.keySet()+"="+transactionByCurrencies.values());
+        System.out.println("lambda_function.LambdaList.testParallelStreamAPI::"+transactionByCurrencies.keySet()+"="+transactionByCurrencies.values());
 
     }
 
