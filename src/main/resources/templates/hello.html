@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="utf-8">
+<title>Hello Mongo</title>
+
+</head>
+<body>
+	Hello Mongo!!Welcome to No SQL!!!
+
+	<form>
+
+		<span id="hello" th:text="${name}">Hello,</span>
+		<span th:text="#{'name.greeting'}">World!</span>
+
+	</form>
+	
+	<script th:src="@{/js/jquery-1.11.3.js}"></script>
+	<script th:src="@{/js/bootstrap.js}"></script>
+	<script th:src="@{/js/ecom/hello.js}"></script>
+	<link th:href="@{/css/bootstrap.css}" rel="stylesheet"/>
+</body>
+</html>

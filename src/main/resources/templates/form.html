@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Form Input</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link th:href="@{/css/bootstrap.css}" rel="stylesheet"/>
+    <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet"/>
+    <link th:href="@{/css/bootstrap-theme.min.css}" rel="stylesheet"/>
+    <link th:href="@{/css/customstyle.css}" rel="stylesheet"/>
+    <title></title>
+</head>
+
+<div id="header">
+    <div th:replace="fragments/header :: header"></div>
+</div>
+<body>
+<div class="container">
+    <div class="bs-example">
+        <h1>Sign Up</h1>
+        <form id="formdata" class="form-horizontal" th:action="@{/processdata}" th:method="POST">
+            <div class="form-group">
+                <label class="control-label col-xs-3" for="inputEmail">Email:</label>
+
+                <div class="col-xs-9">
+                    <input type="email" class="form-control" id="inputEmail" name="email" placeholder="Email">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-xs-3" for="inputPassword">Password:</label>
+
+                <div class="col-xs-9">
+                    <input type="password" class="form-control" id="inputPassword" name= "inputPassword" placeholder="Password">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-xs-3" for="confirmPassword">Confirm Password:</label>
+
+                <div class="col-xs-9">
+                    <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" placeholder="Confirm Password">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-xs-3" for="firstName">First Name:</label>
+
+                <div class="col-xs-9">
+                    <input type="text" class="form-control" id="firstName"  name="firstName" placeholder="First Name">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-xs-3" for="lastName">Last Name:</label>
+
+                <div class="col-xs-9">
+                    <input type="text" class="form-control" id="lastName"  name="lastName" placeholder="Last Name">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-xs-3" for="phoneNumber">Phone:</label>
+
+                <div class="col-xs-9">
+                    <input type="tel" class="form-control" id="phoneNumber" name="phoneNumber" placeholder="Phone Number">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-xs-3">Date of Birth:</label>
+
+                <div class="col-xs-3">
+                    <select class="form-control">
+                        <option>Date</option>
+                    </select>
+                </div>
+                <div class="col-xs-3">
+                    <select class="form-control">
+                        <option>Month</option>
+                    </select>
+                </div>
+                <div class="col-xs-3">
+                    <select class="form-control">
+                        <option>Year</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-xs-3" for="postalAddress">Address:</label>
+
+                <div class="col-xs-9">
+                    <textarea rows="3" class="form-control" id="postalAddress" name="postalAddress" placeholder="Postal Address"></textarea>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-xs-3" for="ZipCode">Zip Code:</label>
+
+                <div class="col-xs-9">
+                    <input type="text" class="form-control" id="ZipCode"  name="ZipCode" placeholder="Zip Code">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-xs-3">Gender:</label>
+
+                <div class="col-xs-2">
+                    <div class="btn btn-group" data-toggle="buttons">
+                        <label class="btn btn-success"><input type="radio" name="male">Male</label>
+                        <label class="btn btn-success"><input type="radio" name="female">Female</label>
+                    </div>
+
+            </div>
+            <div class="form-group">
+                <div class="col-xs-offset-3 col-xs-9">
+                    <label class="checkbox-inline">
+                        <input type="checkbox" value="news"> Send me latest news and updates.
+                    </label>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-xs-offset-3 col-xs-9">
+                    <label class="checkbox-inline">
+                        <input type="checkbox" value="agree"> I agree to the <a href="#">Terms and Conditions</a>.
+                    </label>
+                </div>
+            </div>
+            <br>
+
+            <div class="form-group">
+                <div class="col-xs-offset-3 col-xs-9">
+                    <input id="submit-id" type="submit" class="btn btn-primary" value="Submit">
+                    <input  id="reset-id" type="reset" class="btn btn-default" value="Reset">
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<script th:src="@{/js/jquery-1.11.3.js}"></script>
+<script th:src="@{/js/bootstrap.js}"></script>
+<script th:src="@{/js/form.js}"></script>
+</body>
+</html>

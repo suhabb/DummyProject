@@ -1,0 +1,32 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>All Users</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link th:href="@{/css/bootstrap.css}" rel="stylesheet"/>
+    <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet"/>
+    <link th:href="@{/css/bootstrap-theme.min.css}" rel="stylesheet"/>
+    <link th:href="@{/css/customstyle.css}" rel="stylesheet"/>
+</head>
+<body>
+<!--Row with two equal columns-->
+<div id="header">
+    <div th:replace="fragments/header :: header"></div>
+</div>
+<div class="container">
+    <div class="col-md-6">
+        <ul class="list-group">
+
+            <div th:each="person : ${personList}">
+                <li class="list-group-item">
+                    <div th:text="${person.name}"></div>
+                    <span class="badge" style="margin-top:-20px">New</span>
+                </li>
+            </div>
+
+        </ul>
+    </div>
+</div>
+
+</body>
+</html>

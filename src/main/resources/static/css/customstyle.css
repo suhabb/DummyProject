@@ -1,0 +1,27 @@
+p{
+    padding: 50px;
+    font-size: 32px;
+    font-weight: bold;
+    text-align: center;
+    background: #f2f2f2;
+}
+
+.demo-content{
+    padding: 15px;
+    font-size: 18px;
+    min-height: 300px;
+    background: #dbdfe5;
+    margin-bottom: 10px;
+}
+.demo-content.bg-alt{
+    background: #abb1b8;
+}
+
+.bs-example{
+    margin: 20px;
+}
+
+.body{
+
+    margin-top:50px;
+}

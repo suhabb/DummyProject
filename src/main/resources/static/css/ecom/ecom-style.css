@@ -1,0 +1,108 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+.container {
+    background-color: gray;
+    width: 100%;
+}
+
+.wrapper {
+    width: 900px;
+    margin: auto;
+}
+
+.dark {
+    background-color: #31b0d5;
+}
+
+.light {
+    background-color: #777777;
+}
+
+#top_left {
+    display: inline-block;
+}
+
+#top_right {
+    float: right;
+}
+
+#top_div {
+    height: 40px;
+    line-height: 40px;
+}
+
+#logo_left {
+    display: inline-block;
+
+}
+
+#logo_right {
+    float: right;
+    margin-top: 50px;
+}
+
+#searchid {
+    height: 30px;
+    border-radius: 8px;
+}
+
+#searchtext {
+    background-color: darkgreen;
+    border-radius: 8px;
+    color: white;
+    padding: 8px;
+    width: 70px;
+    border: 1px solid darkgreen;
+}
+
+#clear {
+    clear: both;
+}
+
+ul {
+
+}
+
+ul li {
+    width: 120px;
+    display: inline-block;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+}
+
+ul li a {
+    color: powderblue;
+    text-decoration: none;
+    display: block;
+
+}
+
+ul li a:hover {
+    background-color: orange;
+    color: black;
+}
+
+#tutorial_image img {
+    width: 868px;
+    border: 1px solid grey;
+    padding: 10px;
+    background-color: #66512c;
+    box-shadow: 5px 5px 10px grey;
+    margin-top:10px;
+
+}
+
+.text_info{
+    background-color: cadetblue;
+    width:250px;
+    margin:10px;
+    display: inline-block;
+    border: 1px solid red;
+    padding: 5px;
+    box-shadow: 5px 5px 10px grey;
+
+}
