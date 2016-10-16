@@ -15,7 +15,7 @@ import java.util.Properties;
     public static void main(String[] args) {
 
         final String username = "suhabb22@gmail.com";
-        final String password = "irn28bru";
+        final String password = "12345231231";
 
         Properties props = new Properties();
         props.put("mail.smtp.auth", "true");
