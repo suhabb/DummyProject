@@ -1,0 +1,33 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculator App</title>
+</head>
+<body ng-app="calculatorApp">
+<h1>Calculator App</h1>
+<div ng-controller="CalculatorCntrl as CalculatorController">
+	
+	<input type="text" name="Input One" ng-model="CalculatorController.op1">
+	<span ng-bind="CalculatorController.selectedOperation"></span>
+	<input type="text" name="Input Two" ng-model="CalculatorController.op2">
+	<button ng-click="CalculatorController.computeResult()">=</button>
+	<span ng-bind="CalculatorController.resultedValue"></span>
+	<p>
+		Choose Operation:
+		<button ng-click="CalculatorController.buttonClicked('+')">+</button>
+		<button ng-click="CalculatorController.buttonClicked('-')">-</button>
+		<button ng-click="CalculatorController.buttonClicked('*')">*</button>
+		<button ng-click="CalculatorController.buttonClicked('/')">/</button>
+	</p>
+    </div>
+</body>
+<script th:src="@{/js/jquery-1.11.3.js}"></script>
+<script th:src="@{/js/bootstrap.js}"></script>
+<script th:src="@{/js/angular.js}"></script>
+<script th:src="@{/js/calculator-app.js}"></script>
+
+<!--<script src="C:\Users\suhail\spring-workspace\ShowMeCode\src\main\resources\static\js\jquery-1.11.3.js"></script>
+<script src="C:\Users\suhail\spring-workspace\ShowMeCode\src\main\resources\static\js\angular.js"></script>
+<script src="C:\Users\suhail\spring-workspace\ShowMeCode\src\main\resources\static\js\calculator-app.js"></script>-->
+</html>
