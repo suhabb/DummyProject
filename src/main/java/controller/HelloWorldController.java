@@ -17,7 +17,7 @@ import java.util.List;
 import java.util.Map;
 
 @Controller
-public class MongoController {
+public class HelloWorldController {
 	
 	@Autowired
 	protected LoginService loginService;

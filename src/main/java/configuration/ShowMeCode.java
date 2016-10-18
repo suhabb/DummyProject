@@ -12,10 +12,10 @@ import org.springframework.context.annotation.ImportResource;
 @ComponentScan("${scan.packages}")
 @ImportResource("mongdo-config.xml")
 @EnableAspectJAutoProxy
-public class MongoDbApplication {
+public class ShowMeCode {
 
     public static void main(String[] args) {
-        SpringApplication.run(MongoDbApplication.class, args);
+        SpringApplication.run(ShowMeCode.class, args);
     }
     
 }
