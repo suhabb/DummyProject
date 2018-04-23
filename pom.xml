@@ -116,6 +116,12 @@
             <groupId>org.springframework.hateoas</groupId>
             <artifactId>spring-hateoas</artifactId>
         </dependency>
+
+        <dependency>
+            <groupId>commons-lang</groupId>
+            <artifactId>commons-lang</artifactId>
+            <version>2.4</version>
+        </dependency>
     </dependencies>
 
     <build>
@@ -131,6 +137,45 @@
                     </dependency>
                 </dependencies>
 
+            </plugin>
+
+            <plugin>
+                <groupId>org.jsonschema2pojo</groupId>
+                <artifactId>jsonschema2pojo-maven-plugin</artifactId>
+                <version>0.5.1</version>
+                <configuration>
+                    <sourceType>jsonschema</sourceType>
+                    <outputDirectory>${project.build.directory}/generated-sources</outputDirectory>
+                    <annotationStyle>jackson2</annotationStyle>
+                    <generateBuilders>true</generateBuilders>
+                    <initializeCollections>true</initializeCollections>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>generate1</id>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                        <configuration>
+                            <targetPackage>json_data_api_model.person</targetPackage>
+                            <sourceDirectory>${basedir}/src/main/resources/json_schema/person</sourceDirectory>
+                        </configuration>
+
+                    </execution>
+
+                    <execution>
+                        <id>generate2</id>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                        <configuration>
+                            <targetPackage>json_data_api_model.geo</targetPackage>
+                            <sourceDirectory>${basedir}/src/main/resources/json_schema/geojson</sourceDirectory>
+
+                        </configuration>
+                    </execution>
+
+                </executions>
             </plugin>
         </plugins>
     </build>
