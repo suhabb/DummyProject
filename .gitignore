@@ -1,0 +1,9 @@
+.idea/
+target/
+logs/
+app.pid
+*.iml
+
+#NetBeans
+nb-configuration.xml
+nbactions.xml
