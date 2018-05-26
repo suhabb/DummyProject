@@ -1,17 +1,32 @@
 package data_transfer;
 
+import constraints.DatePattern;
+
+import javax.validation.constraints.*;
+import java.util.List;
+
 public class PersonDTO {
 
+	@AssertTrue
 	private Boolean isActive;
+	@NotNull
+	@Min(0)
 	private String balance;
+	@Positive
 	private Integer age;
 	private String eyeColor;
 	private String name;
 	private String gender;
 	private String company;
+	@Email
 	private String email;
 	private String phone;
 	private String address;
+
+	@DatePattern
+	private String date;
+
+	private List<@NotNull String> oldAddress;
 	
 	public PersonDTO(){}
 	
