@@ -1,118 +1,125 @@
 package data_transfer;
 
 import constraints.DatePattern;
+import constraints.ElementSize;
 
 import javax.validation.constraints.*;
 import java.util.List;
 
 public class PersonDTO {
 
-	@AssertTrue
-	private Boolean isActive;
-	@NotNull
-	@Min(0)
-	private String balance;
-	@Positive
-	private Integer age;
-	private String eyeColor;
-	private String name;
-	private String gender;
-	private String company;
-	@Email
-	private String email;
-	private String phone;
-	private String address;
+    @AssertTrue
+    private Boolean isActive;
+    @NotNull
+    @Min(0)
+    private String balance;
+    @Positive
+    private Integer age;
+    private String eyeColor;
 
-	@DatePattern
-	private String date;
+    @Size(min = 1, max = 30)
+    private String name;
 
-	private List<@NotNull String> oldAddress;
-	
-	public PersonDTO(){}
-	
-	public PersonDTO(String name,Integer age){
-		this.name = name;
-		this.age = age;
-		
-	}
+    private String gender;
 
-	public Boolean getIsActive() {
-		return isActive;
-	}
+    private String company;
+    @Email
+    private String email;
+    private String phone;
+    private String address;
 
-	public void setIsActive(Boolean isActive) {
-		this.isActive = isActive;
-	}
+    @DatePattern
+    private String date;
 
-	public String getBalance() {
-		return balance;
-	}
+    @ElementSize(min = 1, max = 5)
+    private List<String> oldAddress;
 
-	public void setBalance(String balance) {
-		this.balance = balance;
-	}
+    public PersonDTO() {
+    }
 
-	public Integer getAge() {
-		return age;
-	}
+    public PersonDTO(String name, Integer age) {
+        this.name = name;
+        this.age = age;
 
-	public void setAge(Integer age) {
-		this.age = age;
-	}
+    }
 
-	public String getEyeColor() {
-		return eyeColor;
-	}
+    public Boolean getIsActive() {
+        return isActive;
+    }
 
-	public void setEyeColor(String eyeColor) {
-		this.eyeColor = eyeColor;
-	}
+    public void setIsActive(Boolean isActive) {
+        this.isActive = isActive;
+    }
 
-	public String getName() {
-		return name;
-	}
+    public String getBalance() {
+        return balance;
+    }
 
-	public void setName(String name) {
-		this.name = name;
-	}
+    public void setBalance(String balance) {
+        this.balance = balance;
+    }
 
-	public String getGender() {
-		return gender;
-	}
+    public Integer getAge() {
+        return age;
+    }
 
-	public void setGender(String gender) {
-		this.gender = gender;
-	}
+    public void setAge(Integer age) {
+        this.age = age;
+    }
 
-	public String getCompany() {
-		return company;
-	}
+    public String getEyeColor() {
+        return eyeColor;
+    }
 
-	public void setCompany(String company) {
-		this.company = company;
-	}
+    public void setEyeColor(String eyeColor) {
+        this.eyeColor = eyeColor;
+    }
 
-	public String getEmail() {
-		return email;
-	}
+    public String getName() {
+        return name;
+    }
 
-	public void setEmail(String email) {
-		this.email = email;
-	}
+    public void setName(String name) {
+        this.name = name;
+    }
 
-	public String getPhone() {
-		return phone;
-	}
+    public String getGender() {
+        return gender;
+    }
 
-	public void setPhone(String phone) {
-		this.phone = phone;
-	}
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
 
-	public String getAddress() {
-		return address;
-	}
+    public String getCompany() {
+        return company;
+    }
 
-	public void setAddress(String address) {
-		this.address = address;
-	}
+    public void setCompany(String company) {
+        this.company = company;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
 }

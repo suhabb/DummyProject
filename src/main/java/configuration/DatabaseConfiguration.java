@@ -1,6 +1,7 @@
 package configuration;
 
 import com.mongodb.Mongo;
+import com.mongodb.MongoClient;
 import com.mongodb.MongoURI;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;
@@ -27,4 +28,8 @@ public class DatabaseConfiguration extends AbstractMongoConfiguration {
 		return new Mongo(new MongoURI(url));
 	}
 
+	@Override
+	public MongoClient mongoClient() {
+		return new MongoClient(url);
+	}
 }

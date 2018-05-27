@@ -21,63 +21,65 @@ public class DatePatternTest {
 
 
     @Test
-    public void testDatePattern(){
+    public void testDatePattern() {
         Set<ConstraintViolation<PersonDTO>> violationSet = validator
-                .validateValue(PersonDTO.class,"date","2017-12-01");
+                .validateValue(PersonDTO.class, "date", "2017-12-01");
 
         assertThat(violationSet.size()).isEqualTo(0);
     }
 
     @Test
-    public void testDatePattern2(){
+    public void testDatePattern2() {
         Set<ConstraintViolation<PersonDTO>> violationSet = validator
-                .validateValue(PersonDTO.class,"date","2020-12-01");
+                .validateValue(PersonDTO.class, "date", "2020-12-01");
 
         assertThat(violationSet.size()).isEqualTo(0);
     }
 
 
     @Test
-    public void testDatePatternWrongString(){
+    public void testDatePatternWrongString() {
         Set<ConstraintViolation<PersonDTO>> violationSet = validator
-                .validateValue(PersonDTO.class,"date","2017-02-30asas");
-        violationSet.stream().forEach(personDTOConstraintViolation -> {
-            log.info("Violations:{}",personDTOConstraintViolation.getMessage());
+                .validateValue(PersonDTO.class, "date", "2017-02-30asas");
+        violationSet.stream().forEach(violation -> {
+            log.info("Violations:{}", violation.getMessage());
         });
 
         assertThat(violationSet.size()).isEqualTo(1);
     }
 
     @Test
-    public void testDatePatternWrongFormat(){
+    public void testDatePatternWrongFormat() {
         Set<ConstraintViolation<PersonDTO>> violationSet = validator
-                .validateValue(PersonDTO.class,"date","02-01-2017");
-        violationSet.stream().forEach(personDTOConstraintViolation -> {
-            log.info("Violations:{}",personDTOConstraintViolation.getMessage());
+                .validateValue(PersonDTO.class, "date", "02-01-2017");
+        violationSet.stream().forEach(violation -> {
+            log.info("Violations:{}", violation.getMessage());
         });
 
         assertThat(violationSet.size()).isEqualTo(1);
     }
 
     @Test
-    public void testDatePatternWrongFormat_YYY(){
+    public void testDatePatternWrongFormat_YYY() {
         Set<ConstraintViolation<PersonDTO>> violationSet = validator
-                .validateValue(PersonDTO.class,"date","02/01/2017");
-        violationSet.stream().forEach(personDTOConstraintViolation -> {
-            log.info("Violations:{}",personDTOConstraintViolation.getMessage());
+                .validateValue(PersonDTO.class, "date", "02/01/2017");
+        violationSet.stream().forEach(violation -> {
+            log.info("Violations:{}", violation.getMessage());
         });
 
         assertThat(violationSet.size()).isEqualTo(1);
     }
 
     @Test
-    public void testDatePatternWrongInvalidDate(){
+    public void testDatePatternWrongInvalidDate() {
         Set<ConstraintViolation<PersonDTO>> violationSet = validator
-                .validateValue(PersonDTO.class,"date","2017-02-30");
-        violationSet.stream().forEach(personDTOConstraintViolation -> {
-            log.info("Violations:{}",personDTOConstraintViolation.getMessage());
+                .validateValue(PersonDTO.class, "date", "2017-02-30");
+        violationSet.stream().forEach(violation -> {
+            log.info("Violations:{}", violation.getMessage());
         });
 
         assertThat(violationSet.size()).isEqualTo(1);
     }
+
+
 }
