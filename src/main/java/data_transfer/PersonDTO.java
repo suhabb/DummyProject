@@ -34,6 +34,10 @@ public class PersonDTO {
     @ElementSize(min = 1, max = 5)
     private List<String> oldAddress;
 
+    @ElementSize
+    private List<String> accounts;
+
+
     public PersonDTO() {
     }
 

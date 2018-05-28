@@ -2,10 +2,10 @@ package constraints;
 
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
-import java.text.DateFormat;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
+import java.util.Objects;
 
 public class DatePatternImpl implements ConstraintValidator<DatePattern, String> {
 
@@ -23,17 +23,17 @@ public class DatePatternImpl implements ConstraintValidator<DatePattern, String>
     @Override
     public boolean isValid(String value, ConstraintValidatorContext constraintValidatorContext) {
 
-        if (value == null) {
+        if (Objects.isNull(value)) {
             return false;
         }
 
         try {
-            DateFormat df = new SimpleDateFormat(pattern);
-            Date dateObject = df.parse(value);
-            if (!df.format(dateObject).equals(value)) {
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern(pattern);
+            LocalDate localDate = LocalDate.parse(value, formatter);
+            if (!formatter.format(localDate).equals(value)) {
                 return false;
             }
-        } catch (ParseException ex) {
+        } catch (DateTimeParseException ex) {
             return false;
         }
 
