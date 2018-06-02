@@ -13,18 +13,14 @@ public class DatePatternImpl implements ConstraintValidator<DatePattern, String>
 
     @Override
     public void initialize(DatePattern constraintAnnotation) {
-
-        //retrieves the parameter
-
         this.pattern = constraintAnnotation.pattern();
-
     }
 
     @Override
     public boolean isValid(String value, ConstraintValidatorContext constraintValidatorContext) {
 
         if (Objects.isNull(value)) {
-            return false;
+            return true;
         }
 
         try {
@@ -36,7 +32,6 @@ public class DatePatternImpl implements ConstraintValidator<DatePattern, String>
         } catch (DateTimeParseException ex) {
             return false;
         }
-
         return true;
     }
 }
